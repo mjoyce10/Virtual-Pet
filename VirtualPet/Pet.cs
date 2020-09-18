@@ -24,5 +24,9 @@ namespace VirtualPet
             return Name;
         }
 
+        public string GetSpecies()
+        {
+            return Species;
+        }
     }
 }

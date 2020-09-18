@@ -67,11 +67,11 @@ namespace VirtualPet.Tests
         [Fact]
         public void GetSpecies_Should_Get_Pet_Species_Value()
         {
-            //testPet.SetSpecies("Dog");
+            testPet.SetSpecies("Dog");
 
-            //string testPetSpecies = testPet.GetSpecies();
+           string testPetSpecies = testPet.GetSpecies();
 
-            //Assert.Equal("Dog", testPetSpecies);
+            Assert.Equal("Dog", testPetSpecies);
         }
 
         [Fact]
