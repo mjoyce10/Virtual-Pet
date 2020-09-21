@@ -14,6 +14,7 @@ namespace VirtualPet
         public int Hunger = 50;
         public int Health = 30;
 
+
         public void SetName(string name)
         {
             Name = name;
@@ -45,6 +46,14 @@ namespace VirtualPet
         public int GetHealth()
         {
             return Health;
+        }
+        public void Feed()
+        {
+            Hunger -= 40;
+        }
+        public void SeeDoctor()
+        {
+            Health += 30;
         }
     }
 }
