@@ -9,6 +9,8 @@ namespace VirtualPet
         public string Name { get; set; }
         public string Species { get; set; }
 
+        public int Hunger = 50;
+
         public void SetName(string name)
         {
             Name = name;
@@ -27,6 +29,10 @@ namespace VirtualPet
         public string GetSpecies()
         {
             return Species;
+        }
+        public int GetHunger()
+        {
+            return Hunger;
         }
     }
 }

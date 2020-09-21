@@ -77,15 +77,17 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Hunger()
         {
-            // Assert.NotNull(testPet.Hunger);
+            testPet.Hunger = 100;
+
+            Assert.Equal(100, testPet.Hunger);
         }
 
         [Fact]
         public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
         {
-            //int testPetHunger = testPet.GetHunger();
+            int testPetHunger = testPet.GetHunger();
 
-            // Assert.Equal(50, testPetHunger);
+             Assert.Equal(50, testPetHunger);
         }
 
         [Fact]
