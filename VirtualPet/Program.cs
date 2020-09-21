@@ -16,6 +16,11 @@ namespace VirtualPet
 
             Console.WriteLine($"{userPet.Name} the {userPet.Species}:");
             Console.WriteLine($"Health: {userPet.GetHealth()}");
+            Console.WriteLine($"Hunger: {userPet.GetHunger()}");
+            Console.WriteLine($"Thirst: {userPet.GetThirst()}");
+            Console.WriteLine($"Boredom: {userPet.GetBoredom()}");
+            
+               
 
             Console.ReadLine();
         }
