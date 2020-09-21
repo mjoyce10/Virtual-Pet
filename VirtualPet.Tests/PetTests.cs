@@ -93,15 +93,19 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Boredom()
         {
-            // Assert.NotNull(testPet.Boredom);
+            {
+                testPet.Boredom = 100;
+
+                Assert.Equal(100, testPet.Boredom);
+            }
         }
 
         [Fact]
         public void GetBoredom_Should_Return_Initial_Boredom_Level_Of_60()
         {
-            // int testPetBoredom = testPet.GetBoredom();
+            int testPetBoredom = testPet.GetBoredom();
 
-            // Assert.Equal(60, testPetBoredom);
+            Assert.Equal(60, testPetBoredom);
         }
 
         [Fact]
