@@ -143,25 +143,25 @@ namespace VirtualPet.Tests
         [Fact]
         public void Play_Should_Increase_Hunger_By_10()
         {
-            // testPet.Play();
+             testPet.Play();
 
-            // Assert.Equal(60, testPet.GetHunger());
+             Assert.Equal(60, testPet.GetHunger());
         }
 
         [Fact]
         public void Play_Should_Decrease_Boredom_By_20()
         {
-            // testPet.Play();
+             testPet.Play();
 
-            // Assert.Equal(40, testPet.GetBoredom());
+             Assert.Equal(40, testPet.GetBoredom());
         }
 
         [Fact]
         public void Play_Should_Increase_Health_By_10()
         {
-            // testPet.Play();
+             testPet.Play();
 
-            // Assert.Equal(40, testPet.GetHealth());
+             Assert.Equal(40, testPet.GetHealth());
         }
 
         [Fact]
