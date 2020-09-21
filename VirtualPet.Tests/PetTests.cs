@@ -111,15 +111,17 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Health()
         {
-            // Assert.NotNull(testPet.Health);
+            testPet.Health = 100;
+
+            Assert.Equal(100, testPet.Health);
         }
 
         [Fact]
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
-            // int testPetHealth = testPet.GetHealth();
+             int testPetHealth = testPet.GetHealth();
             
-            // Assert.Equal(30, testPetHealth);
+             Assert.Equal(30, testPetHealth);
         }
 
         [Fact]
