@@ -13,6 +13,7 @@ namespace VirtualPet
         public int Boredom = 60;
         public int Hunger = 50;
         public int Health = 30;
+        public int Thirst = 50;
 
 
         public void SetName(string name)
@@ -46,6 +47,10 @@ namespace VirtualPet
         public int GetHealth()
         {
             return Health;
+        }
+        public int GetThirst()
+        {
+            return Thirst;
         }
         public void Feed()
         {
