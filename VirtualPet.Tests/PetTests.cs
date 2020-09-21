@@ -163,6 +163,12 @@ namespace VirtualPet.Tests
 
             Assert.Equal(40, testPet.GetHealth());
         }
+        [Fact]
+        public void Play_Should_Increase_Thirst_By_10()
+        {
+            testPet.Play();
+            Assert.Equal(60, testPet.GetThirst());
+        }
 
         [Fact]
         public void Tick_Should_Increase_Hunger_By_5()
@@ -187,6 +193,13 @@ namespace VirtualPet.Tests
 
             Assert.Equal(25, testPet.GetHealth());
         }
+        [Fact]
+        public void Tick_Should_Decrease_Thirst_By_5()
+        {
+            testPet.Tick();
+
+            Assert.Equal(45, testPet.GetThirst());
+        }
 
         [Fact]
         public void Pet_Should_Have_Thirst()
@@ -202,6 +215,13 @@ namespace VirtualPet.Tests
             int testPetThirst = testPet.GetThirst();
 
             Assert.Equal(50, testPetThirst);
+        }
+        [Fact]
+        public void Water_Should_Decrease_Thirst()
+        {
+            testPet.Water();
+
+            Assert.Equal(10, testPet.GetThirst());
         }
     }
 }

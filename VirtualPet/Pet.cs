@@ -56,6 +56,10 @@ namespace VirtualPet
         {
             Hunger -= 40;
         }
+        public void Water()
+        {
+            Thirst -= 40;
+        }
         public void SeeDoctor()
         {
             Health += 30;
@@ -65,12 +69,14 @@ namespace VirtualPet
             Hunger += 10;
             Boredom -= 20;
             Health += 10;
+            Thirst += 10;
         }
         public void Tick()
         {
             Hunger += 5;
             Boredom += 5;
             Health -= 5;
+            Thirst -= 5;
         }
     }
 }
