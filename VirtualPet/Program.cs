@@ -31,6 +31,34 @@ namespace VirtualPet
             Console.WriteLine($"4. Take {userPet.GetName()} to the doctor.");
             Console.WriteLine("5. Do nothing.");
             Console.WriteLine("6. Exit game.");
+
+            string menuChoice = Console.ReadLine();
+
+                switch (menuChoice)
+                {
+                    case "1":
+                        userPet.Feed();
+                        break;
+                    case "2":
+                        userPet.Water();
+                        break;
+                    case "3":
+                        userPet.Play();
+                        break;
+                    case "4":
+                        userPet.SeeDoctor();
+                        break;
+                    case "5":
+                        userPet.Tick();
+                        break;
+                    case "6":
+                        playingGame = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        break;
+                }
+                Console.Clear();
             }
 
             Console.ReadLine();

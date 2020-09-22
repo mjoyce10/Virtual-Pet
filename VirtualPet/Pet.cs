@@ -76,7 +76,7 @@ namespace VirtualPet
             Hunger += 5;
             Boredom += 5;
             Health -= 5;
-            Thirst -= 5;
+            Thirst += 5;
         }
     }
 }
