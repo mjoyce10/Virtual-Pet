@@ -54,22 +54,44 @@ namespace VirtualPet
         }
         public void Feed()
         {
-            Hunger -= 40;
+            if (Hunger < 40)
+                Console.WriteLine($"{Name} is not hungry.");
+            else {
+                Hunger -= 40;
+                Console.WriteLine($"You fed {Name}.");
+                  }
+            
         }
         public void Water()
         {
-            Thirst -= 40;
+            if (Thirst < 40)
+                Console.WriteLine($"{Name} is not thirsty.");
+            else
+            {
+                Thirst -= 40;
+                Console.WriteLine($"You hydrated {Name}.");
+            }
         }
         public void SeeDoctor()
-        {
-            Health += 30;
+        { if (Health > 70)
+                Console.WriteLine($"{Name} is healthy and doesn't need to see their favourite vet.");
+            else
+            {
+                Health += 30;
+                Console.WriteLine($"You took {Name} to see their favourite vet!");
+            }
         }
         public void Play()
-        {
-            Hunger += 10;
-            Boredom -= 20;
-            Health += 10;
-            Thirst += 10;
+        { if (Boredom < 20)
+                Console.WriteLine($"{Name} doesn't feel like playing right now.");
+            else
+            {
+                Hunger += 10;
+                Boredom -= 20;
+                Health += 10;
+                Thirst += 10;
+                Console.WriteLine($"You played with {Name}!");
+            }
         }
         public void Tick()
         {
