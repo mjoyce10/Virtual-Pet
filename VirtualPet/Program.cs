@@ -38,26 +38,33 @@ namespace VirtualPet
                 {
                     case "1":
                         userPet.Feed();
+                        Console.WriteLine($"You fed {userPet.GetName()}!" );
                         break;
                     case "2":
                         userPet.Water();
+                        Console.WriteLine($"You gave {userPet.GetName()} some water!");
                         break;
                     case "3":
                         userPet.Play();
+                        Console.WriteLine($"You played with {userPet.GetName()}!" );
                         break;
                     case "4":
                         userPet.SeeDoctor();
+                        Console.WriteLine($"You took {userPet.GetName()} to see his favorite vet!");
                         break;
                     case "5":
                         userPet.Tick();
+                        Console.WriteLine($"You did nothing. {userPet.GetName()} gives you a soulful look.");
                         break;
                     case "6":
                         playingGame = false;
+                        Console.WriteLine("Thanks for playing!");
                         break;
                     default:
                         Console.WriteLine("Invalid input.");
                         break;
                 }
+                Console.ReadKey();
                 Console.Clear();
             }
 
