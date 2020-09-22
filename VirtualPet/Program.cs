@@ -14,6 +14,10 @@ namespace VirtualPet
             Console.WriteLine($"What kind of animal is {userPet.GetName()}?");
             userPet.SetSpecies(Console.ReadLine());
 
+            bool playingGame = true;
+
+            while (playingGame)
+            {
             Console.WriteLine($"{userPet.GetName()} the {userPet.GetSpecies()}:");
             Console.WriteLine($"Health: {userPet.GetHealth()}");
             Console.WriteLine($"Hunger: {userPet.GetHunger()}");
@@ -21,11 +25,15 @@ namespace VirtualPet
             Console.WriteLine($"Boredom: {userPet.GetBoredom()}");
 
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1. Feed your pet.");
-            Console.WriteLine("2. Give your pet some water.");
-            Console.WriteLine("3. Play with your pet.");
-            Console.WriteLine("4. Take your pet to the doctor.");
+            Console.WriteLine($"1. Feed {userPet.GetName()}.");
+            Console.WriteLine($"2. Give {userPet.GetName()} some water.");
+            Console.WriteLine($"3. Play with {userPet.GetName()}.");
+            Console.WriteLine($"4. Take {userPet.GetName()} to the doctor.");
             Console.WriteLine("5. Do nothing.");
+            Console.WriteLine("6. Exit game.");
+            }
+
+            Console.ReadLine();
         }
     }
 }
