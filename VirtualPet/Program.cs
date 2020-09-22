@@ -10,11 +10,11 @@ namespace VirtualPet
             Pet userPet = new Pet();
 
             Console.WriteLine("What is your pet's name?");
-            userPet.Name = Console.ReadLine();
-            Console.WriteLine($"What kind of animal is {userPet.Name}?");
-            userPet.Species = Console.ReadLine();
+            userPet.SetName(Console.ReadLine());
+            Console.WriteLine($"What kind of animal is {userPet.GetName()}?");
+            userPet.SetSpecies(Console.ReadLine());
 
-            Console.WriteLine($"{userPet.Name} the {userPet.Species}:");
+            Console.WriteLine($"{userPet.GetName()} the {userPet.GetSpecies()}:");
             Console.WriteLine($"Health: {userPet.GetHealth()}");
             Console.WriteLine($"Hunger: {userPet.GetHunger()}");
             Console.WriteLine($"Thirst: {userPet.GetThirst()}");
