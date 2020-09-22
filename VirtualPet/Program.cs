@@ -19,10 +19,13 @@ namespace VirtualPet
             Console.WriteLine($"Hunger: {userPet.GetHunger()}");
             Console.WriteLine($"Thirst: {userPet.GetThirst()}");
             Console.WriteLine($"Boredom: {userPet.GetBoredom()}");
-            
-               
 
-            Console.ReadLine();
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1. Feed your pet.");
+            Console.WriteLine("2. Give your pet some water.");
+            Console.WriteLine("3. Play with your pet.");
+            Console.WriteLine("4. Take your pet to the doctor.");
+            Console.WriteLine("5. Do nothing.");
         }
     }
 }
