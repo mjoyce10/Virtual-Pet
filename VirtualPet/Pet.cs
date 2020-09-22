@@ -102,13 +102,20 @@ namespace VirtualPet
 
             Console.WriteLine();
             if (Health <= 0)
-                Console.WriteLine($"{Name} died because you did not take him to the vet.");
+                Console.WriteLine($"{Name} died because you did not take them to the vet.");
                 // Go back and create a new pet.
             else if (Health == 5)
                 Console.WriteLine($"Get {Name} to the vet.");
             else if (Health < 20)
                 Console.WriteLine($"{Name} is not feeling well. You should take them to the vet.");
-            if (Hunger > 80)
+            if (Hunger >= 100)
+            {
+                Console.WriteLine($"{Name} died because you didn't feed them!");
+                //Go back and create a new pet.
+            }
+            else if(Hunger == 95)
+                Console.WriteLine($"Feed {Name}!");
+            else if (Hunger > 80)
                 Console.WriteLine($"{Name} is very hungry. You should feed them.");
             if (Thirst > 80)
                 Console.WriteLine($"{Name} is very thirsty. You should give them some water.");
