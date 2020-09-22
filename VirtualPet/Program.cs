@@ -52,8 +52,7 @@ namespace VirtualPet
                         userPet.SeeDoctor();
                         break;
                     case "5":
-                        userPet.Tick();
-                        Console.WriteLine($"You did nothing. {userPet.GetName()} gives you a soulful look.");
+                        Console.WriteLine($"You did nothing.");
                         break;
                     case "6":
                         playingGame = false;
@@ -63,8 +62,8 @@ namespace VirtualPet
                         Console.WriteLine("Invalid input.");
                         break;
                 }
-                Console.ReadKey();
                 userPet.Tick();
+                Console.ReadKey();
             }
 
             Console.ReadLine();
