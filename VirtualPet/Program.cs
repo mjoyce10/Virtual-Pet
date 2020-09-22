@@ -18,11 +18,14 @@ namespace VirtualPet
 
             while (playingGame)
             {
+            Console.Clear();
+
             Console.WriteLine($"{userPet.GetName()} the {userPet.GetSpecies()}:");
             Console.WriteLine($"Health: {userPet.GetHealth()}");
             Console.WriteLine($"Hunger: {userPet.GetHunger()}");
             Console.WriteLine($"Thirst: {userPet.GetThirst()}");
             Console.WriteLine($"Boredom: {userPet.GetBoredom()}");
+            Console.WriteLine();
 
             Console.WriteLine("What would you like to do?");
             Console.WriteLine($"1. Feed {userPet.GetName()}.");
@@ -38,7 +41,7 @@ namespace VirtualPet
                 {
                     case "1":
                         userPet.Feed();
-                        Console.WriteLine($"You fed {userPet.GetName()}!" );
+                        Console.WriteLine($"You fed {userPet.GetName()}!");
                         break;
                     case "2":
                         userPet.Water();
@@ -46,7 +49,7 @@ namespace VirtualPet
                         break;
                     case "3":
                         userPet.Play();
-                        Console.WriteLine($"You played with {userPet.GetName()}!" );
+                        Console.WriteLine($"You played with {userPet.GetName()}!");
                         break;
                     case "4":
                         userPet.SeeDoctor();
@@ -65,7 +68,7 @@ namespace VirtualPet
                         break;
                 }
                 Console.ReadKey();
-                Console.Clear();
+                userPet.Tick();
             }
 
             Console.ReadLine();
