@@ -103,7 +103,7 @@ namespace VirtualPet
             Console.WriteLine();
             if (Health <= 0)
                 Console.WriteLine($"{Name} died because you did not take them to the vet.");
-                // Go back and create a new pet.
+            // Go back and create a new pet.
             else if (Health == 5)
                 Console.WriteLine($"Get {Name} to the vet.");
             else if (Health < 20)
@@ -113,14 +113,32 @@ namespace VirtualPet
                 Console.WriteLine($"{Name} died because you didn't feed them!");
                 //Go back and create a new pet.
             }
-            else if(Hunger == 95)
+            else if (Hunger == 95)
                 Console.WriteLine($"Feed {Name}!");
             else if (Hunger > 80)
                 Console.WriteLine($"{Name} is very hungry. You should feed them.");
-            if (Thirst > 80)
+            if (Thirst >= 100)
+            {
+                Console.WriteLine($"{Name} died because you didn't give them water.");
+                //Go back and create a new pet. 
+            }
+            else if (Thirst == 95)
+            {
+                Console.WriteLine($"Give {Name} some water!");
+            }
+            else if (Thirst > 80)
                 Console.WriteLine($"{Name} is very thirsty. You should give them some water.");
-            if (Boredom > 80)
+            if (Boredom >= 100)
+            {
+                Console.WriteLine($"Bad news. {Name} has died of boredom.");
+                //Go back and create a new pet.
+
+            }
+            else if (Boredom == 95)
+                Console.WriteLine($"PLAY WITH {Name}!!");
+            else if (Boredom > 80)
                 Console.WriteLine($"{Name} is very bored. You should play with them.");
+            
 
         }
     }
