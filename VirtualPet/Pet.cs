@@ -101,28 +101,46 @@ namespace VirtualPet
             Boredom += 5;
             Health -= 5;
             Thirst += 5;
+        }
 
-            Console.WriteLine();
-            if (Health <= 0)
-                Console.WriteLine($"{Name} died because you did not take them to the vet.");
-            // Go back and create a new pet.
-            else if (Health == 5)
-                Console.WriteLine($"Get {Name} to the vet.");
-            else if (Health < 20)
-                Console.WriteLine($"{Name} is not feeling well. You should take them to the vet.");
+        public void CheckHunger()
+        {
             if (Hunger >= 100)
             {
                 Console.WriteLine($"{Name} died because you didn't feed them!");
-                //Go back and create a new pet.
+                StartOver();
+                MakeNewPet();
+                NewPetStats();
             }
             else if (Hunger == 95)
                 Console.WriteLine($"Feed {Name}!");
             else if (Hunger > 80)
                 Console.WriteLine($"{Name} is very hungry. You should feed them.");  
+        }
+
+        public void CheckHealth()
+        {
+            if (Health <= 0)
+            {
+                Console.WriteLine($"{Name} died because you did not take them to the vet.");
+                StartOver();
+                MakeNewPet();
+                NewPetStats();
+            }
+            else if (Health == 5)
+                Console.WriteLine($"Get {Name} to the vet.");
+            else if (Health < 20)
+                Console.WriteLine($"{Name} is not feeling well. You should take them to the vet.");
+        }
+
+        public void CheckThirst()
+        {
             if (Thirst >= 100)
             {
                 Console.WriteLine($"{Name} died because you didn't give them water.");
-                //Go back and create a new pet. 
+                StartOver();
+                MakeNewPet();
+                NewPetStats();
             }
             else if (Thirst == 95)
             {
@@ -130,18 +148,43 @@ namespace VirtualPet
             }
             else if (Thirst > 80)
                 Console.WriteLine($"{Name} is very thirsty. You should give them some water.");
+        }
+
+        public void CheckBoredom()
+        {
             if (Boredom >= 100)
             {
                 Console.WriteLine($"Bad news. {Name} has died of boredom.");
-                //Go back and create a new pet.
-
+                StartOver();
+                MakeNewPet();
+                NewPetStats();
             }
             else if (Boredom == 95)
                 Console.WriteLine($"PLAY WITH {Name}!!");
             else if (Boredom > 80)
                 Console.WriteLine($"{Name} is very bored. You should play with them.");
-            
+        }
 
+        public void StartOver()
+        {
+            Console.WriteLine("Press any key to start over.");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        public void MakeNewPet()
+        { 
+            Console.WriteLine("What is your pet's name?");
+            Name = Console.ReadLine();
+            Console.WriteLine($"What kind of animal is {Name}?");
+            Species = Console.ReadLine();
+        }
+
+        public void NewPetStats()
+        {
+            Boredom = 60;
+            Hunger = 50;
+            Thirst = 50;
+            Health = 30;
         }
     }
 }

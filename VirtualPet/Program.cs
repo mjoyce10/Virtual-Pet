@@ -8,12 +8,7 @@ namespace VirtualPet
         {
             Console.WriteLine("Hello! Welcome to Virtual Pets");
             Pet userPet = new Pet();
-
-            Console.WriteLine("What is your pet's name?");
-            userPet.SetName(Console.ReadLine());
-            Console.WriteLine($"What kind of animal is {userPet.GetName()}?");
-            userPet.SetSpecies(Console.ReadLine());
-
+            userPet.MakeNewPet();
             bool playingGame = true;
 
             while (playingGame)
@@ -63,6 +58,11 @@ namespace VirtualPet
                         break;
                 }
                 userPet.Tick();
+                Console.WriteLine();
+                userPet.CheckHealth();
+                userPet.CheckHunger();
+                userPet.CheckThirst();
+                userPet.CheckBoredom();
                 Console.ReadKey();
             }
 
