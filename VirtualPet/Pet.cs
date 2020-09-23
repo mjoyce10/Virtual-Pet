@@ -10,10 +10,10 @@ namespace VirtualPet
         public string Name { get; set; }
         public string Species { get; set; }
 
-        public int Boredom = 60;
-        public int Hunger = 50;
-        public int Health = 30;
-        public int Thirst = 50;
+        public int Boredom { get; set; } = 60;
+        public int Hunger { get; set; } = 50;
+        public int Health { get; set; } = 30;
+        public int Thirst { get; set; } = 50;
 
 
         public void SetName(string name)
@@ -56,10 +56,11 @@ namespace VirtualPet
         {
             if (Hunger < 40)
                 Console.WriteLine($"{Name} is not hungry.");
-            else {
+            else 
+            {
                 Hunger -= 40;
                 Console.WriteLine($"You fed {Name}.");
-                  }
+            }
             
         }
         public void Water()
@@ -82,7 +83,8 @@ namespace VirtualPet
             }
         }
         public void Play()
-        { if (Boredom < 20)
+        { 
+            if (Boredom < 20)
                 Console.WriteLine($"{Name} doesn't feel like playing right now.");
             else
             {
@@ -116,7 +118,7 @@ namespace VirtualPet
             else if (Hunger == 95)
                 Console.WriteLine($"Feed {Name}!");
             else if (Hunger > 80)
-                Console.WriteLine($"{Name} is very hungry. You should feed them.");
+                Console.WriteLine($"{Name} is very hungry. You should feed them.");  
             if (Thirst >= 100)
             {
                 Console.WriteLine($"{Name} died because you didn't give them water.");
