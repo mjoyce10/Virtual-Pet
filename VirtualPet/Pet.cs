@@ -40,25 +40,22 @@ namespace VirtualPet
         }
        
         
-        public void Play()
+        public virtual void Play()
         { 
             if (Boredom < 20)
                 Console.WriteLine($"{Name} doesn't feel like playing right now.");
             else
             {
-                Hunger += 10;
+                
                 Boredom -= 20;
-                Health += 10;
-                Thirst += 10;
+                
                 Console.WriteLine($"You played with {Name}!");
             }
         }
-        public void Tick()
-        {
-            Hunger += 5;
+        public virtual void Tick()
+        { 
             Boredom += 5;
-            Health -= 5;
-            Thirst += 5;
+            
         }
 
         public void CheckBoredom()
@@ -82,7 +79,7 @@ namespace VirtualPet
             Console.ReadKey();
             Console.Clear();
         }
-        public void MakeNewPet()
+        public virtual void MakeNewPet()
         { 
             Console.WriteLine("What is your pet's name?");
             Name = Console.ReadLine();
@@ -90,12 +87,10 @@ namespace VirtualPet
             Species = Console.ReadLine();
         }
 
-        public void NewPetStats()
+        public virtual void NewPetStats()
         {
             Boredom = 60;
-            Hunger = 50;
-            Thirst = 50;
-            Health = 30;
+            
         }
     }
 }
