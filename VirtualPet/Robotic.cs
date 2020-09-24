@@ -6,9 +6,17 @@ namespace VirtualPet
 {
     public class Robotic : Pet
     {
-        public int Oil { get; set; }
-        public int Performance { get; set; }
+        public int OilLevel { get; set; } = 50;
+        public int PerformanceLevel { get; set; } = 30;
 
+        public int GetOilLevel()
+        {
+            return OilLevel;
+        }
 
+        public int GetPerformanceLevel()
+        {
+            return PerformanceLevel;
+        }
     }
 }
