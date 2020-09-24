@@ -8,6 +8,7 @@ namespace VirtualPet
         {
             Console.WriteLine("Hello! Welcome to Virtual Pets");
             Pet userPet = new Pet();
+            Organic organicPet = new Organic();
             userPet.MakeNewPet();
             bool playingGame = true;
 
@@ -16,9 +17,9 @@ namespace VirtualPet
             Console.Clear();
 
             Console.WriteLine($"{userPet.GetName()} the {userPet.GetSpecies()}:");
-            Console.WriteLine($"Health: {userPet.GetHealth()}");
-            Console.WriteLine($"Hunger: {userPet.GetHunger()}");
-            Console.WriteLine($"Thirst: {userPet.GetThirst()}");
+            Console.WriteLine($"Health: {organicPet.GetHealth()}");
+            Console.WriteLine($"Hunger: {organicPet.GetHunger()}");
+            Console.WriteLine($"Thirst: {organicPet.GetThirst()}");
             Console.WriteLine($"Boredom: {userPet.GetBoredom()}");
             Console.WriteLine();
 
@@ -35,16 +36,16 @@ namespace VirtualPet
                 switch (menuChoice)
                 {
                     case "1":
-                        userPet.Feed();
+                        organicPet.Feed();
                         break;
                     case "2":
-                        userPet.Water();
+                        organicPet.Water();
                         break;
                     case "3":
                         userPet.Play();
                         break;
                     case "4":
-                        userPet.SeeDoctor();
+                        organicPet.SeeDoctor();
                         break;
                     case "5":
                         Console.WriteLine($"You did nothing.");
@@ -59,9 +60,9 @@ namespace VirtualPet
                 }
                 userPet.Tick();
                 Console.WriteLine();
-                userPet.CheckHealth();
-                userPet.CheckHunger();
-                userPet.CheckThirst();
+                organicPet.CheckHealth();
+                organicPet.CheckHunger();
+                organicPet.CheckThirst();
                 userPet.CheckBoredom();
                 Console.ReadKey();
             }

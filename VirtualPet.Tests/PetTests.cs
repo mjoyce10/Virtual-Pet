@@ -7,9 +7,13 @@ namespace VirtualPet.Tests
     {
         private Pet testPet;
 
+        private Organic organicPet;
+
+
         public PetTests()
         {
             testPet = new Pet();
+            organicPet = new Organic();
         }
 
         [Fact]
@@ -77,17 +81,17 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Hunger()
         {
-            testPet.Hunger = 100;
+            organicPet.Hunger = 100;
 
-            Assert.Equal(100, testPet.Hunger);
+            Assert.Equal(100, organicPet.Hunger);
         }
 
         [Fact]
         public void GetHunger_Should_Return_Initial_Hunger_Level_Of_50()
         {
-            int testPetHunger = testPet.GetHunger();
+            int organicPetHunger = organicPet.GetHunger();
 
-            Assert.Equal(50, testPetHunger);
+            Assert.Equal(50, organicPetHunger);
         }
 
         [Fact]
@@ -111,41 +115,41 @@ namespace VirtualPet.Tests
         [Fact]
         public void Pet_Should_Have_Health()
         {
-            testPet.Health = 100;
+            organicPet.Health = 100;
 
-            Assert.Equal(100, testPet.Health);
+            Assert.Equal(100, organicPet.Health);
         }
 
         [Fact]
         public void GetHealth_Should_Return_Initial_Health_Level_Of_30()
         {
-            int testPetHealth = testPet.GetHealth();
+            int organicPetHealth = organicPet.GetHealth();
 
-            Assert.Equal(30, testPetHealth);
+            Assert.Equal(30, organicPetHealth);
         }
 
         [Fact]
         public void Feed_Should_Decrease_Hunger_By_40()
         {
-            testPet.Feed();
+            organicPet.Feed();
 
-            Assert.Equal(10, testPet.GetHunger());
+            Assert.Equal(10, organicPet.GetHunger());
         }
 
         [Fact]
         public void SeeDoctor_Should_Increase_Health_By_30()
         {
-            testPet.SeeDoctor();
+            organicPet.SeeDoctor();
 
-            Assert.Equal(60, testPet.GetHealth());
+            Assert.Equal(60, organicPet.GetHealth());
         }
 
         [Fact]
         public void Play_Should_Increase_Hunger_By_10()
         {
-            testPet.Play();
+            organicPet.Play();
 
-            Assert.Equal(60, testPet.GetHunger());
+            Assert.Equal(60, organicPet.GetHunger());
         }
 
         [Fact]
@@ -159,23 +163,23 @@ namespace VirtualPet.Tests
         [Fact]
         public void Play_Should_Increase_Health_By_10()
         {
-            testPet.Play();
+            organicPet.Play();
 
-            Assert.Equal(40, testPet.GetHealth());
+            Assert.Equal(40, organicPet.GetHealth());
         }
         [Fact]
         public void Play_Should_Increase_Thirst_By_10()
         {
-            testPet.Play();
-            Assert.Equal(60, testPet.GetThirst());
+            organicPet.Play();
+            Assert.Equal(60, organicPet.GetThirst());
         }
 
         [Fact]
         public void Tick_Should_Increase_Hunger_By_5()
         {
-            testPet.Tick();
+            organicPet.Tick();
 
-            Assert.Equal(55, testPet.GetHunger());
+            Assert.Equal(55, organicPet.GetHunger());
         }
 
         [Fact]
@@ -189,39 +193,39 @@ namespace VirtualPet.Tests
         [Fact]
         public void Tick_Should_Decrease_Health_By_5()
         {
-            testPet.Tick();
+            organicPet.Tick();
 
-            Assert.Equal(25, testPet.GetHealth());
+            Assert.Equal(25, organicPet.GetHealth());
         }
         [Fact]
         public void Tick_Should_Increase_Thirst_By_5()
         {
-            testPet.Tick();
+            organicPet.Tick();
 
-            Assert.Equal(55, testPet.GetThirst());
+            Assert.Equal(55, organicPet.GetThirst());
         }
 
         [Fact]
         public void Pet_Should_Have_Thirst()
         {
-            testPet.Thirst = 100;
+            organicPet.Thirst = 100;
 
-            Assert.Equal(100, testPet.Thirst);
+            Assert.Equal(100, organicPet.Thirst);
         }
 
         [Fact]
         public void GetThirst_Should_Return_Initial_Thirst_Level_Of_50()
         {
-            int testPetThirst = testPet.GetThirst();
+            int organicPetThirst = organicPet.GetThirst();
 
-            Assert.Equal(50, testPetThirst);
+            Assert.Equal(50, organicPetThirst);
         }
         [Fact]
         public void Water_Should_Decrease_Thirst()
         {
-            testPet.Water();
+            organicPet.Water();
 
-            Assert.Equal(10, testPet.GetThirst());
+            Assert.Equal(10, organicPet.GetThirst());
         }
     }
 }

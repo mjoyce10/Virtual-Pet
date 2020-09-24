@@ -97,5 +97,28 @@ namespace VirtualPet
             else if (Thirst > 80)
                 Console.WriteLine($"{Name} is very thirsty. You should give them some water.");
         }
+        public override void Play()
+        {
+            base.Play();
+            Hunger += 10;
+            Health += 10;
+            Thirst += 10;
+        }
+        public override void Tick()
+        {
+            base.Tick();
+            Hunger += 5;
+            Health -= 5;
+            Thirst += 5;
+        }
+        public override void MakeNewPet()
+        {
+            base.MakeNewPet();
+        }
+        public override void NewPetStats()
+        {
+            base.NewPetStats();
+        }
+
     }
 }

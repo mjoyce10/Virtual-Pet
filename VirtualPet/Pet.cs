@@ -42,15 +42,9 @@ namespace VirtualPet
         
         public virtual void Play()
         { 
-            if (Boredom < 20)
-                Console.WriteLine($"{Name} doesn't feel like playing right now.");
-            else
-            {
+          Boredom -= 20;
                 
-                Boredom -= 20;
-                
-                Console.WriteLine($"You played with {Name}!");
-            }
+          Console.WriteLine($"You played with {Name}!");
         }
         public virtual void Tick()
         { 
@@ -92,5 +86,10 @@ namespace VirtualPet
             Boredom = 60;
             
         }
+        public void Adopted() 
+        {
+            
+        }
+
     }
 }
