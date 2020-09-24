@@ -18,5 +18,13 @@ namespace VirtualPet
         {
             return PerformanceLevel;
         }
+        public void GiveOil()
+        {
+            OilLevel += 40; 
+        }
+        public void SeeMechanic()
+        {
+            PerformanceLevel += 30;
+        }
     }
 }
