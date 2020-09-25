@@ -100,5 +100,11 @@ namespace VirtualPet
             Console.WriteLine("4. Do nothing.");
             Console.WriteLine("5. Exit game.");
         }
+        public override void NewPetStats()
+        {
+            base.NewPetStats();
+            OilLevel = 50;
+            PerformanceLevel = 30;
+        }
     }
 }

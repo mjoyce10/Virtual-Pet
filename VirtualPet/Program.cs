@@ -17,16 +17,6 @@ namespace VirtualPet
             {
             Console.Clear();
 
-            
-
-            Console.WriteLine("What would you like to do?");
-            Console.WriteLine($"1. Feed {userPet.GetName()}.");
-            Console.WriteLine($"2. Give {userPet.GetName()} some water.");
-            Console.WriteLine($"3. Play with {userPet.GetName()}.");
-            Console.WriteLine($"4. Take {userPet.GetName()} to the doctor.");
-            Console.WriteLine("5. Do nothing.");
-            Console.WriteLine("6. Exit game.");
-
             string menuChoice = Console.ReadLine();
 
                 switch (menuChoice)
@@ -35,7 +25,7 @@ namespace VirtualPet
                         organicPet.Feed();
                         break;
                     case "2":
-                        organicPet.Water();
+                        organicPet.QuenchThirst();
                         break;
                     case "3":
                         userPet.Play();

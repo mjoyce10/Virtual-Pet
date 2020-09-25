@@ -111,13 +111,13 @@ namespace VirtualPet
             Health -= 5;
             Thirst += 5;
         }
-        public override void MakeNewPet()
-        {
-            base.MakeNewPet();
-        }
+        
         public override void NewPetStats()
         {
             base.NewPetStats();
+            Hunger = 50;
+            Health  = 30;
+            Thirst = 50;
         }
 
         public override void GiveStats()
