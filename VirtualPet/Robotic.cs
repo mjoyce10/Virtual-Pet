@@ -8,6 +8,9 @@ namespace VirtualPet
     {
         public int OilLevel { get; set; } = 50;
         public int PerformanceLevel { get; set; } = 30;
+        public int BatteryLevel { get; set; } = 50;
+        
+        
 
         public int GetOilLevel()
         {
@@ -18,7 +21,21 @@ namespace VirtualPet
         {
             return PerformanceLevel;
         }
-   
+        public int GetBatteryLevel()
+        {
+            return BatteryLevel;
+        }
+        public override void Feed()
+        {
+            if (BatteryLevel > 60)
+                Console.WriteLine($"{Name} doesn't need to be charged.");
+            else
+            {
+                BatteryLevel += 40;
+                Console.WriteLine($"You charged {Name}.");
+            }
+
+        }
         public override void SeeDoctor()
         {
             if (PerformanceLevel > 70)
@@ -53,6 +70,20 @@ namespace VirtualPet
             else if (PerformanceLevel < 20)
                 Console.WriteLine($"{Name} is not performing optimally. You should take them to the mechanical vet.");
         }
+        public override void CheckHunger()
+        {
+            if (BatteryLevel <= 0)
+            {
+                Console.WriteLine($"{Name} died because you didn't charge them!");
+                StartOver();
+                MakeNewPet();
+                NewPetStats();
+            }
+            else if (BatteryLevel == 5)
+                Console.WriteLine($"Charge {Name}!");
+            else if (BatteryLevel < 20)
+                Console.WriteLine($"{Name}'s battery is low. You should charge them.");
+        }
         public override void CheckThirst()
         {
             if (OilLevel <= 0)
@@ -74,18 +105,21 @@ namespace VirtualPet
             base.Play();
             PerformanceLevel += 10;
             OilLevel -= 10;
+            BatteryLevel -= 10;
         }
         public override void Tick()
         {
             base.Tick();
             PerformanceLevel -= 5;
             OilLevel -= 5;
+            BatteryLevel -= 5;
         }
 
         public override void GiveStats()
         {
             Console.WriteLine($"{GetName()} the {GetSpecies()}:");
             Console.WriteLine($"Performance Level: {GetPerformanceLevel()}");
+            Console.WriteLine($"Battery Level: {GetBatteryLevel()}");
             Console.WriteLine($"Oil Level: {GetOilLevel()}");
             Console.WriteLine($"Boredom: {GetBoredom()}");
             Console.WriteLine();
@@ -94,17 +128,19 @@ namespace VirtualPet
         public override void MenuOptions()
         {
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine($"1. Oil {GetName()}.");
-            Console.WriteLine($"2. Play with {GetName()}.");
-            Console.WriteLine($"3. Take {GetName()} to the mechanical vet.");
-            Console.WriteLine("4. Do nothing.");
-            Console.WriteLine("5. Exit game.");
+            Console.WriteLine($"1. Charge {GetName()}.");
+            Console.WriteLine($"2. Oil {GetName()}.");
+            Console.WriteLine($"3. Play with {GetName()}.");
+            Console.WriteLine($"4. Take {GetName()} to the mechanical vet.");
+            Console.WriteLine("5. Do nothing.");
+            Console.WriteLine("6. Exit game.");
         }
         public override void NewPetStats()
         {
             base.NewPetStats();
             OilLevel = 50;
             PerformanceLevel = 30;
+            BatteryLevel = 50;
         }
     }
 }

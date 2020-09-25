@@ -22,7 +22,7 @@ namespace VirtualPet
         {
             return Thirst;
         }
-        public void Feed()
+        public override void Feed()
         {
             if (Hunger < 40)
                 Console.WriteLine($"{Name} is not hungry.");
@@ -53,7 +53,7 @@ namespace VirtualPet
                 Console.WriteLine($"You took {Name} to see their favourite vet!");
             }
         }
-        public void CheckHunger()
+        public override void CheckHunger()
         {
             if (Hunger >= 100)
             {

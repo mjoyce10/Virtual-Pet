@@ -11,7 +11,7 @@ namespace VirtualPet
         public string Species { get; set; }
 
         public int Boredom { get; set; } = 60;
-        
+
 
         public void SetName(string name)
         {
@@ -32,24 +32,24 @@ namespace VirtualPet
         {
             return Species;
         }
-        
+
 
         public int GetBoredom()
         {
             return Boredom;
         }
-       
-        
+
+
         public virtual void Play()
-        { 
-          Boredom -= 20;
-                
-          Console.WriteLine($"You played with {Name}!");
+        {
+            Boredom -= 20;
+
+            Console.WriteLine($"You played with {Name}!");
         }
         public virtual void Tick()
-        { 
+        {
             Boredom += 5;
-            
+
         }
         public virtual void CheckHealth()
         {
@@ -57,6 +57,10 @@ namespace VirtualPet
         }
 
         public virtual void CheckThirst()
+        {
+
+        }
+        public virtual void CheckHunger()
         {
 
         }
@@ -76,6 +80,10 @@ namespace VirtualPet
         }
 
         public virtual void SeeDoctor()
+        {
+
+        }
+        public virtual void Feed()
         {
 
         }
