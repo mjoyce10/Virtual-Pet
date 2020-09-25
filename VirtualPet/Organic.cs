@@ -67,7 +67,7 @@ namespace VirtualPet
             else if (Hunger > 80)
                 Console.WriteLine($"{Name} is very hungry. You should feed them.");
         }
-        public void CheckHealth()
+        public override void CheckHealth()
         {
             if (Health <= 0)
             {
@@ -81,7 +81,7 @@ namespace VirtualPet
             else if (Health < 20)
                 Console.WriteLine($"{Name} is not feeling well. You should take them to the vet.");
         }
-        public void CheckThirst()
+        public override void CheckThirst()
         {
             if (Thirst >= 100)
             {

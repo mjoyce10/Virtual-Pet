@@ -51,7 +51,15 @@ namespace VirtualPet
             Boredom += 5;
             
         }
+        public virtual void CheckHealth()
+        {
 
+        }
+
+        public virtual void CheckThirst()
+        {
+
+        }
         public void CheckBoredom()
         {
             if (Boredom >= 100)
