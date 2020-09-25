@@ -37,10 +37,12 @@ namespace VirtualPet
 
             while (playingGame)
             {
-
+            Console.Clear();
+            
             foreach (Pet pet in myShelter.ListOfPets)
             {
                 pet.GiveStats();
+                Console.WriteLine();
                 Console.ReadLine();
             }
 
@@ -52,16 +54,16 @@ namespace VirtualPet
                 switch (menuChoice)
                 {
                     case "1":
-                        organicPet.Feed();
+                        userPet.Feed();
                         break;
                     case "2":
-                        organicPet.QuenchThirst();
+                        userPet.QuenchThirst();
                         break;
                     case "3":
                         userPet.Play();
                         break;
                     case "4":
-                        organicPet.SeeDoctor();
+                        userPet.SeeDoctor();
                         break;
                     case "5":
                         Console.WriteLine($"You did nothing.");
@@ -74,12 +76,13 @@ namespace VirtualPet
                         Console.WriteLine("Invalid input.");
                         break;
                 }
+                
                 userPet.Tick();
-                Console.WriteLine();
                 organicPet.CheckHealth();
                 organicPet.CheckHunger();
                 organicPet.CheckThirst();
                 userPet.CheckBoredom();
+                Console.WriteLine("Press any key to continue.");
                 Console.ReadKey();
             }
 
