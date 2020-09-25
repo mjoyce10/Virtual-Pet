@@ -118,10 +118,8 @@ namespace VirtualPet
         {
 
         }
-        public void Adopted() 
-        {
-            
-        }
+
+       
 
     }
 }

@@ -31,18 +31,21 @@ namespace VirtualPet
                     Console.WriteLine("Invalid input.");
                     break;
             }
+
             
+            bool playingGame = true;
+
+            while (playingGame)
+            {
+
             foreach (Pet pet in myShelter.ListOfPets)
             {
                 pet.GiveStats();
                 Console.ReadLine();
             }
 
-            bool playingGame = true;
-
-            while (playingGame)
-            {
-            Console.Clear();
+            userPet = myShelter.SelectPet();
+            userPet.MenuOptions();
 
             string menuChoice = Console.ReadLine();
 
