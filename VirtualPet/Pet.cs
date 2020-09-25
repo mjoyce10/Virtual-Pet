@@ -75,6 +75,14 @@ namespace VirtualPet
                 Console.WriteLine($"{Name} is very bored. You should play with them.");
         }
 
+        public virtual void SeeDoctor()
+        {
+
+        }
+        public virtual void QuenchThirst()
+        {
+
+        }
         public void StartOver()
         {
             Console.WriteLine("Press any key to start over.");
@@ -93,6 +101,14 @@ namespace VirtualPet
         {
             Boredom = 60;
             
+        }
+        public virtual void GiveStats()
+        {
+
+        }
+        public virtual void MenuOptions()
+        {
+
         }
         public void Adopted() 
         {

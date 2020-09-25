@@ -18,13 +18,26 @@ namespace VirtualPet
         {
             return PerformanceLevel;
         }
-        public void GiveOil()
+   
+        public override void SeeDoctor()
         {
-            OilLevel += 40; 
+            if (PerformanceLevel > 70)
+                Console.WriteLine($"{Name} is functioning optimally and doesn't need to see their favourite mechanical vet.");
+            else
+            {
+                PerformanceLevel += 30;
+                Console.WriteLine($"You took {Name} to see their favourite mechanical vet!");
+            }
         }
-        public void SeeMechanic()
+        public override void QuenchThirst()
         {
-            PerformanceLevel += 30;
+            if (OilLevel > 60)
+                Console.WriteLine($"{Name} does not need oil.");
+            else
+            {
+                OilLevel += 40;
+                Console.WriteLine($"You lubricated {Name}.");
+            }
         }
         public override void CheckHealth()
         {
@@ -67,6 +80,25 @@ namespace VirtualPet
             base.Tick();
             PerformanceLevel -= 5;
             OilLevel -= 5;
+        }
+
+        public override void GiveStats()
+        {
+            Console.WriteLine($"{GetName()} the {GetSpecies()}:");
+            Console.WriteLine($"Performance Level: {GetPerformanceLevel()}");
+            Console.WriteLine($"Oil Level: {GetOilLevel()}");
+            Console.WriteLine($"Boredom: {GetBoredom()}");
+            Console.WriteLine();
+
+        }
+        public override void MenuOptions()
+        {
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine($"1. Oil {GetName()}.");
+            Console.WriteLine($"2. Play with {GetName()}.");
+            Console.WriteLine($"3. Take {GetName()} to the mechanical vet.");
+            Console.WriteLine("4. Do nothing.");
+            Console.WriteLine("5. Exit game.");
         }
     }
 }

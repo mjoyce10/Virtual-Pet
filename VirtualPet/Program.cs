@@ -9,6 +9,7 @@ namespace VirtualPet
             Console.WriteLine("Hello! Welcome to Virtual Pets");
             Pet userPet = new Pet();
             Organic organicPet = new Organic();
+            Robotic roboticPet = new Robotic();
             userPet.MakeNewPet();
             bool playingGame = true;
 
@@ -16,12 +17,7 @@ namespace VirtualPet
             {
             Console.Clear();
 
-            Console.WriteLine($"{userPet.GetName()} the {userPet.GetSpecies()}:");
-            Console.WriteLine($"Health: {organicPet.GetHealth()}");
-            Console.WriteLine($"Hunger: {organicPet.GetHunger()}");
-            Console.WriteLine($"Thirst: {organicPet.GetThirst()}");
-            Console.WriteLine($"Boredom: {userPet.GetBoredom()}");
-            Console.WriteLine();
+            
 
             Console.WriteLine("What would you like to do?");
             Console.WriteLine($"1. Feed {userPet.GetName()}.");

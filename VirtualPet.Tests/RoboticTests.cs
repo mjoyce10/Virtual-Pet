@@ -46,16 +46,16 @@ namespace VirtualPet.Tests
             Assert.Equal(30, roboticPetPerformanceLevel);
         }
         [Fact]
-        public void GiveOil_Should_Increase_OilLevel_By_40()
+        public void QuenchThirst_Should_Increase_OilLevel_By_40()
         {
-            roboticPet.GiveOil();
+            roboticPet.QuenchThirst();
 
             Assert.Equal(90, roboticPet.GetOilLevel());
         }
         [Fact]
-        public void SeeMechanic_Should_Increase_PerformanceLevel_By_30()
+        public void SeeDoctor_Should_Increase_PerformanceLevel_By_30()
         {
-            roboticPet.SeeMechanic();
+            roboticPet.SeeDoctor();
 
             Assert.Equal(60, roboticPet.GetPerformanceLevel());
         }

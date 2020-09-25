@@ -33,7 +33,7 @@ namespace VirtualPet
             }
 
         }
-        public void Water()
+        public override void QuenchThirst()
         {
             if (Thirst < 40)
                 Console.WriteLine($"{Name} is not thirsty.");
@@ -43,7 +43,7 @@ namespace VirtualPet
                 Console.WriteLine($"You hydrated {Name}.");
             }
         }
-        public void SeeDoctor()
+        public override void SeeDoctor()
         {
             if (Health > 70)
                 Console.WriteLine($"{Name} is healthy and doesn't need to see their favourite vet.");
@@ -120,5 +120,25 @@ namespace VirtualPet
             base.NewPetStats();
         }
 
+        public override void GiveStats()
+        {
+            Console.WriteLine($"{GetName()} the {GetSpecies()}:");
+            Console.WriteLine($"Health: {GetHealth()}");
+            Console.WriteLine($"Hunger: {GetHunger()}");
+            Console.WriteLine($"Thirst: {GetThirst()}");
+            Console.WriteLine($"Boredom: {GetBoredom()}");
+            Console.WriteLine();
+
+        }
+        public override void MenuOptions()
+        {
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine($"1. Feed {GetName()}.");
+            Console.WriteLine($"2. Give {GetName()} some water.");
+            Console.WriteLine($"3. Play with {GetName()}.");
+            Console.WriteLine($"4. Take {GetName()} to the doctor.");
+            Console.WriteLine("5. Do nothing.");
+            Console.WriteLine("6. Exit game.");
+        }
     }
 }
