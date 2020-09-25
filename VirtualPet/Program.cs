@@ -8,9 +8,36 @@ namespace VirtualPet
         {
             Console.WriteLine("Hello! Welcome to Virtual Pets");
             Pet userPet = new Pet();
+            Shelter myShelter = new Shelter();
             Organic organicPet = new Organic();
             Robotic roboticPet = new Robotic();
-            userPet.MakeNewPet();
+            Console.WriteLine("Would you like your pet to be ...");
+            Console.WriteLine("1. An organic pet.");
+            Console.WriteLine("2. A robotic pet.");
+            string petTypeChoice = Console.ReadLine();
+            switch (petTypeChoice)
+            {
+                case "1":
+                    organicPet.MakeNewPet();
+                    userPet = new Organic(organicPet.GetName(), organicPet.GetSpecies());
+                    myShelter.AddPet(userPet);
+                    break;
+                case "2":
+                    roboticPet.MakeNewPet();
+                    userPet = new Robotic(roboticPet.GetName(), roboticPet.GetSpecies());
+                    myShelter.AddPet(userPet);
+                    break;
+                default:
+                    Console.WriteLine("Invalid input.");
+                    break;
+            }
+            
+            foreach (Pet pet in myShelter.ListOfPets)
+            {
+                pet.GiveStats();
+                Console.ReadLine();
+            }
+
             bool playingGame = true;
 
             while (playingGame)

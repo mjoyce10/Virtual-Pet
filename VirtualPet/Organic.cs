@@ -9,6 +9,15 @@ namespace VirtualPet
         public int Hunger { get; set; } = 50;
         public int Health { get; set; } = 30;
         public int Thirst { get; set; } = 50;
+        public Organic() 
+        { 
+        
+        }
+        public Organic(string name, string species)
+        {
+            Name = name;
+            Species = species;
+        }
 
         public int GetHunger()
         {

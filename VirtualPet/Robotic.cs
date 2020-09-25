@@ -9,8 +9,16 @@ namespace VirtualPet
         public int OilLevel { get; set; } = 50;
         public int PerformanceLevel { get; set; } = 30;
         public int BatteryLevel { get; set; } = 50;
-        
-        
+        public Robotic()
+        {
+
+        }
+        public Robotic(string name, string species)
+        {
+            Name = name;
+            Species = species;
+        }
+
 
         public int GetOilLevel()
         {
