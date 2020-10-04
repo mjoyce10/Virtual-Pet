@@ -32,7 +32,6 @@ namespace VirtualPet
                     break;
             }
 
-            
             bool playingGame = true;
 
             while (playingGame)
@@ -42,7 +41,6 @@ namespace VirtualPet
             foreach (Pet pet in myShelter.ListOfPets)
             {
                 pet.GiveStats();
-                Console.WriteLine();
                 Console.ReadLine();
             }
 
@@ -78,9 +76,9 @@ namespace VirtualPet
                 }
                 
                 userPet.Tick();
-                organicPet.CheckHealth();
-                organicPet.CheckHunger();
-                organicPet.CheckThirst();
+                userPet.CheckHealth();
+                userPet.CheckHunger();
+                userPet.CheckThirst();
                 userPet.CheckBoredom();
                 Console.WriteLine("Press any key to continue.");
                 Console.ReadKey();
