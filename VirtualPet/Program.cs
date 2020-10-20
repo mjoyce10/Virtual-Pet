@@ -11,26 +11,7 @@ namespace VirtualPet
             Shelter myShelter = new Shelter();
             Organic organicPet = new Organic();
             Robotic roboticPet = new Robotic();
-            Console.WriteLine("Would you like your pet to be ...");
-            Console.WriteLine("1. An organic pet.");
-            Console.WriteLine("2. A robotic pet.");
-            string petTypeChoice = Console.ReadLine();
-            switch (petTypeChoice)
-            {
-                case "1":
-                    organicPet.MakeNewPet();
-                    userPet = new Organic(organicPet.GetName(), organicPet.GetSpecies());
-                    myShelter.AddPet(userPet);
-                    break;
-                case "2":
-                    roboticPet.MakeNewPet();
-                    userPet = new Robotic(roboticPet.GetName(), roboticPet.GetSpecies());
-                    myShelter.AddPet(userPet);
-                    break;
-                default:
-                    Console.WriteLine("Invalid input.");
-                    break;
-            }
+            myShelter.CreateNewPet(userPet, organicPet, roboticPet, myShelter);
 
             bool playingGame = true;
 
@@ -41,10 +22,12 @@ namespace VirtualPet
             foreach (Pet pet in myShelter.ListOfPets)
             {
                 pet.GiveStats();
-                Console.ReadLine();
             }
 
             userPet = myShelter.SelectPet();
+            Console.Clear();
+            userPet.GiveStats();
+            Console.WriteLine();
             userPet.MenuOptions();
 
             string menuChoice = Console.ReadLine();
@@ -67,6 +50,10 @@ namespace VirtualPet
                         Console.WriteLine($"You did nothing.");
                         break;
                     case "6":
+                        Console.Clear();
+                        myShelter.CreateNewPet(userPet, organicPet, roboticPet, myShelter);
+                        break;
+                    case "7":
                         playingGame = false;
                         Console.WriteLine("Thanks for playing!");
                         break;

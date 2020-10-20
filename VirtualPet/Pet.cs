@@ -99,9 +99,9 @@ namespace VirtualPet
         }
         public virtual void MakeNewPet()
         { 
-            Console.WriteLine("What is your pet's name?");
+            Console.WriteLine("\nWhat is your pet's name?");
             Name = Console.ReadLine();
-            Console.WriteLine($"What kind of animal is {Name}?");
+            Console.WriteLine($"\nWhat kind of animal is {Name}?");
             Species = Console.ReadLine();
         }
 

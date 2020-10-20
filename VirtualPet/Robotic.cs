@@ -141,7 +141,8 @@ namespace VirtualPet
             Console.WriteLine($"3. Play with {GetName()}.");
             Console.WriteLine($"4. Take {GetName()} to the mechanical vet.");
             Console.WriteLine("5. Do nothing.");
-            Console.WriteLine("6. Exit game.");
+            Console.WriteLine($"6. Get {GetName()} a sibling. Add a new pet!");
+            Console.WriteLine("7. Exit game.");
         }
         public override void NewPetStats()
         {
